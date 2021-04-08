@@ -6,10 +6,11 @@
     "start": "ng serve --port 5000",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
     "e2e": "ng e2e",
     "style:fix": "prettier --write \"**/{src,tests,e2e}/*.{scss,ts}\" && js-beautify \"src/**/*.html\"",
-    "style": "prettier --check \"**/{src,tests,e2e}/**/*.{scss,ts}\""
+    "style": "prettier --check \"**/{src,tests,e2e}/**/*.{scss,ts}\"",
+    "lint": "tslint --config tslint.json --project . -e \"**/{test,polyfills}.ts\"",
+    "lint:fix": "tslint --config tslint.json --fix --project . -e \"**/{test,polyfills}.ts\""
   },
   "private": true,
   "dependencies": {
