@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "johnpapa.angular-essentials",
+    "PKief.material-icon-theme",
+    "formulahendry.auto-close-tag",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "amatiasq.sort-imports",
+    "esbenp.prettier-vscode",
+    "HookyQR.beautify"
+  ]
+}
