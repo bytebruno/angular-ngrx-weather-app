@@ -1,0 +1,85 @@
+@import '~@angular/material/theming';
+
+.city-card {
+  @include mat-elevation(2);
+
+  max-width: 400px;
+  margin: 40px;
+  border-radius: 8px;
+  padding: 0;
+
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    @include mat-elevation(9);
+  }
+
+  .city-image-container {
+    height: 230px;
+
+    &:hover > .city-image {
+      filter: brightness(0.5);
+      transition: filter 300ms ease-in-out;
+    }
+
+    .city-image {
+      background-size: cover;
+      filter: brightness(0.3);
+      margin: 0;
+      border-radius: 8px;
+      width: 100%;
+      height: 100%;
+
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transform: translateZ(0) scale(1, 1);
+      transform: translateZ(0);
+      transition: filter 300ms ease-in-out;
+    }
+
+    .mat-card-content {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .city-label {
+        margin: 0;
+        font-size: 2.4em;
+      }
+
+      .country-label {
+        margin: 0;
+        font-weight: 500;
+      }
+
+      .wind-icon-container {
+        .wind-icon {
+          font-size: 1.6em;
+        }
+        .wind-label {
+          font-size: 1.6em;
+        }
+      }
+
+      .temperature-label {
+        margin: 0;
+        font-size: 2.4rem;
+      }
+    }
+
+    .weather-icon-container {
+      position: absolute;
+      right: 30px;
+      top: 80px;
+
+      .weather-icon {
+        font-size: 6rem;
+      }
+    }
+  }
+}
