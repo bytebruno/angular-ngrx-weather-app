@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core'
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [CoreModule],
+  imports: [CoreModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

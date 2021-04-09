@@ -13,7 +13,7 @@ import { StoreModule } from '@ngrx/store'
     // vendor
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot([]),
+    RouterModule,
 
     // ngrx
     EffectsModule.forRoot([]),
