@@ -4,7 +4,6 @@
   @include mat-elevation(2);
 
   max-width: 400px;
-  margin: 40px;
   border-radius: 8px;
   padding: 0;
 
@@ -19,13 +18,13 @@
     height: 230px;
 
     &:hover > .city-image {
-      filter: brightness(0.5);
+      filter: brightness(0.7);
       transition: filter 300ms ease-in-out;
     }
 
     .city-image {
       background-size: cover;
-      filter: brightness(0.3);
+      filter: brightness(0.4);
       margin: 0;
       border-radius: 8px;
       width: 100%;
@@ -80,6 +79,11 @@
       .weather-icon {
         font-size: 6rem;
       }
+    }
+    .loading-label {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
     }
   }
 }

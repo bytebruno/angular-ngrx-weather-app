@@ -1,0 +1,13 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 26px;
+  margin: 40px;
+  justify-items: center;
+
+  @media (max-width: 576px) {
+    margin: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-bottom: 30px;
+  }
+}

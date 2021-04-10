@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment'
 export class OpenWeatherService {
   constructor(private http: HttpClient) {}
 
-  getCityCurrentWeather(cityId: number): Observable<any> {
+  getCityCurrentWeather(cityId: string): Observable<any> {
     return this.http.get<any>(
       `${environment.apiUrl}/weather?id=${cityId}&units=metric&appid=${environment.appId}`
     )

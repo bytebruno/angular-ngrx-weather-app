@@ -1,6 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BrowserModule } from '@angular/platform-browser'
 import { EffectsModule } from '@ngrx/effects'
+import { HttpClientModule } from '@angular/common/http'
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { NgModule } from '@angular/core'
@@ -14,6 +15,7 @@ import { StoreModule } from '@ngrx/store'
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    HttpClientModule,
 
     // ngrx
     EffectsModule.forRoot([]),
