@@ -17,3 +17,8 @@ export const getAllCitiesCurrentWeatherSuccess = createAction(
   '[Weather] Get All Cities Current Weather Success',
   props<{ cities: any }>()
 )
+
+export const getCityCompleteWeatherRequest = createAction(
+  '[Weather] Get City Complete Weather Request',
+  props<{ cityId: number; lat: string; lon: string }>()
+)

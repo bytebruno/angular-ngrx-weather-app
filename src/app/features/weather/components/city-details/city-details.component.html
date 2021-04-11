@@ -1,10 +1,13 @@
 <div class="city-detail-card-container" *ngIf="city$ | async as city">
   <bb-city-card [city]="city" class="header-details-theme"></bb-city-card>
 
-  <mat-card class="city-detail-card" *ngIf="city$ | async as city">
+  <mat-card class="city-detail-card" *ngIf="city">
     <mat-card-content>
       <div class="hourly-weather-container">
-        <bb-hourly-row></bb-hourly-row>
+        <ng-container *ngFor="let hourly of city.nextHours; let isLast = last">
+          <bb-hourly-row [hourly]="hourly"></bb-hourly-row>
+          <hr [hidden]="isLast" />
+        </ng-container>
       </div>
     </mat-card-content>
   </mat-card>

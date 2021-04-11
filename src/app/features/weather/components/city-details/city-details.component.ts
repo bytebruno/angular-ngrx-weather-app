@@ -3,7 +3,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
 
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
+import { getCityCompleteWeatherRequest } from '../../state/weather.actions'
 import { selectCityCurrentWeather } from '../../state/weather.selectors'
+import { take } from 'rxjs/operators'
 
 @Component({
   selector: 'bb-city-details',
@@ -35,9 +37,16 @@ export class CityDetailsComponent implements OnInit {
   private getCityFromStore() {
     this.city$ = this.store.select(selectCityCurrentWeather, Number.parseInt(this.cityId))
 
-    this.city$.subscribe((x) => {
-      console.log(x)
-      if (x === undefined) this.redirectToHome()
+    this.city$.pipe(take(1)).subscribe((city) => {
+      console.log(city)
+      if (city === undefined) this.redirectToHome()
+      this.store.dispatch(
+        getCityCompleteWeatherRequest({
+          cityId: Number.parseInt(this.cityId),
+          lat: city.coordinates.lat,
+          lon: city.coordinates.lon,
+        })
+      )
     })
   }
 

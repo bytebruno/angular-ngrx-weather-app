@@ -10,7 +10,7 @@ export interface IWeatherState {
 }
 
 // Initial state for the 5 european cities
-export const initialWeatherState: IWeatherState = {
+const initialWeatherState: IWeatherState = {
   cities: {
     2759794: {
       id: 2759794,
@@ -18,6 +18,11 @@ export const initialWeatherState: IWeatherState = {
       country: 'Netherlands',
       cityImageSrc: 'city-amsterdam.jpg',
       icon: 'wi wi-cloud',
+      temperature: 0,
+      coordinates: {
+        lat: '52.374',
+        lon: '4.8897',
+      },
     },
     2925533: {
       id: 2925533,
@@ -25,6 +30,11 @@ export const initialWeatherState: IWeatherState = {
       country: 'Germany',
       cityImageSrc: 'city-frankfurt.jpg',
       icon: 'wi wi-cloud',
+      temperature: 0,
+      coordinates: {
+        lat: '50.1167',
+        lon: '8.6833',
+      },
     },
     2643743: {
       id: 2643743,
@@ -32,6 +42,11 @@ export const initialWeatherState: IWeatherState = {
       country: 'England',
       cityImageSrc: 'city-london.jpg',
       icon: 'wi wi-cloud',
+      temperature: 0,
+      coordinates: {
+        lat: '51.5085',
+        lon: '-0.1257',
+      },
     },
     2988507: {
       id: 2988507,
@@ -39,6 +54,11 @@ export const initialWeatherState: IWeatherState = {
       country: 'France',
       cityImageSrc: 'city-paris.jpg',
       icon: 'wi wi-cloud',
+      temperature: 0,
+      coordinates: {
+        lat: '48.8534',
+        lon: '2.3488',
+      },
     },
     3169070: {
       id: 3169070,
@@ -46,20 +66,27 @@ export const initialWeatherState: IWeatherState = {
       country: 'Italy',
       cityImageSrc: 'city-rome.jpg',
       icon: 'wi wi-cloud',
+      temperature: 0,
+      coordinates: {
+        lat: '41.8947',
+        lon: '12.4839',
+      },
     },
   },
 }
 
 export const weatherReducer = createReducer(
   initialWeatherState,
-  on(getCityCurrentWeatherSuccess, (state: IWeatherState, action) => ({
-    ...state,
-    cities: {
-      ...state.cities,
-      [action.cityCurrentWeather.id]: {
-        ...state.cities[action.cityCurrentWeather.id],
-        ...action.cityCurrentWeather,
+  on(getCityCurrentWeatherSuccess, (state: IWeatherState, action) => {
+    return {
+      ...state,
+      cities: {
+        ...state.cities,
+        [action.cityCurrentWeather.id]: {
+          ...state.cities[action.cityCurrentWeather.id],
+          ...action.cityCurrentWeather,
+        },
       },
-    },
-  }))
+    }
+  })
 )

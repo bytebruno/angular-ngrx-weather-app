@@ -7,7 +7,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HourlyRowComponent implements OnInit {
-  @Input() hourlyCondition!: any
+  @Input() hourly!: any
+  math = Math
 
   constructor() {}
 

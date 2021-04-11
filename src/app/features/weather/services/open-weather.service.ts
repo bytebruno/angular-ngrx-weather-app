@@ -12,4 +12,10 @@ export class OpenWeatherService {
       `${environment.apiUrl}/weather?id=${cityId}&units=metric&appid=${environment.appId}`
     )
   }
+
+  getCityCompleteWeather(lat: string, lon: string): Observable<any> {
+    return this.http.get<any>(
+      `${environment.apiUrl}/onecall?lat=${lat}&lon=${lon}&exclude=minutely,daily,alerts&units=metric&appid=${environment.appId}`
+    )
+  }
 }

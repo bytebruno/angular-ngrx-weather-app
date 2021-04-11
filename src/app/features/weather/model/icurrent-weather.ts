@@ -1,9 +1,15 @@
 export interface ICurrentWeather {
-  id: number
-  country: string
-  cityName: string
   cityImageSrc: string
-  icon?: string
-  temperature?: string
+  cityName: string
+  coordinates: {
+    lat: string
+    lon: string
+  }
+  country: string
+  currentDt?: Date
+  icon: string
+  id: number
+  nextHours?: []
+  temperature: number
   windSpeed?: string
 }

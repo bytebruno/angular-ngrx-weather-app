@@ -11,17 +11,17 @@
         <h1 class="city-label">{{ city.cityName }}</h1>
         <h4 class="country-label">{{ city.country }}</h4>
       </div>
-      <div class="wind-icon-container" [hidden]="!city.wind">
+      <div class="wind-icon-container" [hidden]="!city.windSpeed">
         <i class="wi wi-strong-wind wind-icon"></i
-        ><span class="wind-label"> {{ city.wind?.speed }} m/s</span>
+        ><span class="wind-label"> {{ city.windSpeed }} m/s</span>
       </div>
-      <h2 class="temperature-label" [hidden]="!city.main">
-        {{ math.round(city.main?.temp) }} °C
+      <h2 class="temperature-label" [hidden]="!city.currentDt">
+        {{ math.round(city.temperature) }} °C
       </h2>
     </mat-card-content>
-    <div class="weather-icon-container" [hidden]="!city.main">
+    <div class="weather-icon-container" [hidden]="!city.currentDt">
       <i class="weather-icon" [ngClass]="city.icon"></i>
     </div>
-    <h2 class="loading-label" [hidden]="city.main">Loading...</h2>
+    <h2 class="loading-label" [hidden]="city.temperature">Loading...</h2>
   </div>
 </mat-card>

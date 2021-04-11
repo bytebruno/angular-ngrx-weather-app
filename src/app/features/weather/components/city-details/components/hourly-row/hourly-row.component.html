@@ -1,11 +1,12 @@
 <div class="hourly-weather-row">
   <div class="weather-condition-section">
-    <i class="weather-icon wi wi-rain"></i>
+    <div class="weather-icon-container">
+      <i class="weather-icon" [ngClass]="hourly.icon"></i>
+    </div>
     <div class="weather-condition">
-      <h1 class="condition-label">Cloudy</h1>
-      <h3 class="hour-label">10:00</h3>
+      <h1 class="condition-label">{{ hourly.condition }}</h1>
+      <h3 class="hour-label">{{ hourly.hour | date: 'HH:mm':'+0000' }}</h3>
     </div>
   </div>
-  <h1 class="condition-label">7 °C</h1>
+  <h1 class="condition-label">{{ math.round(hourly.temperature) }} °C</h1>
 </div>
-<!-- <hr /> -->

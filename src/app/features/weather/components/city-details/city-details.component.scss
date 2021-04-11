@@ -8,6 +8,7 @@
 
   .city-detail-card {
     border-radius: 0 0 8px 8px;
+    margin-bottom: 40px;
 
     .hourly-weather-container {
       display: flex;
@@ -16,6 +17,7 @@
       hr {
         margin-top: 0;
         width: 100%;
+        opacity: 0.4;
       }
     }
   }

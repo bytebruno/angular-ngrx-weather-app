@@ -3,25 +3,31 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 70px;
 
   .weather-condition-section {
     display: flex;
     flex-direction: row;
-    .weather-icon {
-      font-size: 3rem;
-      margin-right: 10px;
-    }
-  }
 
-  .weather-condition {
-    .condition-label {
-      margin: 0;
-      font-size: 1.8em;
+    .weather-icon-container {
+      min-width: 80px;
+      display: flex;
+      justify-content: center;
+
+      .weather-icon {
+        font-size: 3rem;
+      }
     }
-    .hour-label {
-      margin: 0;
-      font-weight: 400;
+
+    .weather-condition {
+      .condition-label {
+        margin: 0;
+        font-size: 1.8em;
+      }
+      .hour-label {
+        margin: 0;
+        font-weight: 400;
+      }
     }
   }
 }
