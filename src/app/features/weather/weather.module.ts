@@ -12,7 +12,8 @@ import { WeatherEffects } from './state/weather.effects'
 import { WeatherRoutingModule } from './weather-routing.module'
 import { weatherFeatureKey } from './state/weather.selectors'
 import { weatherReducer } from './state/weather.reducers';
-import { HourlyRowComponent } from './components/city-details/components/hourly-row/hourly-row.component'
+import { HourlyRowComponent } from './components/city-details/components/hourly-row/hourly-row.component';
+import { SortByNamePipe } from './pipes/sort-by-name.pipe'
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HourlyRowComponent } from './components/city-details/components/hourly-
     CityCardComponent,
     CityDetailsComponent,
     HourlyRowComponent,
+    SortByNamePipe,
   ],
   imports: [
     // vendor

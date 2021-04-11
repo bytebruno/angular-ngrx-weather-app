@@ -1,7 +1,7 @@
 <div class="grid-container" *ngIf="cities$ | async as cities">
   <div
     class="cards-container"
-    *ngFor="let city of cities | keyvalue; trackBy: trackCities"
+    *ngFor="let city of cities | keyvalue | sortByName; trackBy: trackCities"
   >
     <bb-city-card [city]="city.value" class="card-theme"></bb-city-card>
   </div>
