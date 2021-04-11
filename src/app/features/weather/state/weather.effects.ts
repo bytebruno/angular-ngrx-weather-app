@@ -33,7 +33,7 @@ export class WeatherEffects {
     this.actions$.pipe(
       ofType(getAllCitiesCurrentWeatherRequest),
       withLatestFrom(this.store$),
-      concatMap(([action, store]) => {
+      switchMap(([action, store]) => {
         let citiesIds = Object.keys(store.weather.cities)
         return merge(
           ...citiesIds.map((cityId) =>

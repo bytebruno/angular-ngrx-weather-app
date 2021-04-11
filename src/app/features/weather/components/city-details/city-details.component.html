@@ -1,1 +1,11 @@
-<p>city-details works!</p>
+<div class="city-detail-card-container" *ngIf="city$ | async as city">
+  <bb-city-card [city]="city" class="header-details-theme"></bb-city-card>
+
+  <mat-card class="city-detail-card" *ngIf="city$ | async as city">
+    <mat-card-content>
+      <div class="hourly-weather-container">
+        <bb-hourly-row></bb-hourly-row>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

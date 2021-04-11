@@ -2,46 +2,28 @@
 
 .city-card {
   @include mat-elevation(2);
-
-  max-width: 400px;
   border-radius: 8px;
   padding: 0;
-
   color: white;
-  cursor: pointer;
 
-  &:hover {
-    @include mat-elevation(9);
+  &:focus {
+    outline: none;
   }
 
   .city-image-container {
-    height: 230px;
-
-    &:hover > .city-image {
-      filter: brightness(0.7);
-      transition: filter 300ms ease-in-out;
-    }
-
     .city-image {
       background-size: cover;
-      filter: brightness(0.4);
       margin: 0;
       border-radius: 8px;
       width: 100%;
       height: 100%;
-
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      -webkit-transform: translateZ(0) scale(1, 1);
-      transform: translateZ(0);
-      transition: filter 300ms ease-in-out;
     }
 
     .mat-card-content {
       position: absolute;
       top: 0;
       bottom: 0;
-      margin: 20px;
+      margin: 20px 32px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -58,10 +40,10 @@
 
       .wind-icon-container {
         .wind-icon {
-          font-size: 1.6em;
+          font-size: 1.4em;
         }
         .wind-label {
-          font-size: 1.6em;
+          font-size: 1.4em;
         }
       }
 
@@ -70,20 +52,80 @@
         font-size: 2.4rem;
       }
     }
+  }
+}
 
-    .weather-icon-container {
-      position: absolute;
-      right: 30px;
-      top: 80px;
+:host-context(.card-theme) {
+  .city-card {
+    cursor: pointer;
+    max-width: 400px;
 
-      .weather-icon {
-        font-size: 6rem;
+    &:hover {
+      @include mat-elevation(9);
+    }
+
+    .city-image-container {
+      height: 230px;
+
+      &:hover > .city-image {
+        filter: brightness(0.7);
+        transition: filter 300ms ease-in-out;
+      }
+
+      .city-image {
+        filter: brightness(0.4);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1, 1);
+        transform: translateZ(0);
+        transition: filter 300ms ease-in-out;
+      }
+
+      .weather-icon-container {
+        position: absolute;
+        right: 30px;
+        top: 80px;
+
+        .weather-icon {
+          font-size: 6rem;
+        }
+      }
+      .loading-label {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
       }
     }
-    .loading-label {
-      position: absolute;
-      bottom: 0;
-      right: 20px;
+  }
+}
+
+:host-context(.header-details-theme) {
+  .city-card {
+    .city-image-container {
+      height: 350px;
+      border-radius: 8px 8px 0 0;
+      .city-image {
+        border-radius: 8px 8px 0 0;
+        filter: brightness(0.7);
+      }
+
+      .weather-icon-container {
+        position: absolute;
+        right: 40px;
+        top: 110px;
+
+        .weather-icon {
+          font-size: 8rem;
+        }
+      }
+      .loading-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0 0 0 -75px;
+        font-size: 2.4em;
+        text-shadow: #0f0f0f 5px 2px 6px;
+      }
     }
   }
 }

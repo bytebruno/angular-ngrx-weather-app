@@ -1,7 +1,5 @@
 <div class="grid-container" *ngIf="cities$ | async as cities">
   <div *ngFor="let city of cities | keyvalue">
-    <bb-city-card [city]="city.value"></bb-city-card>
+    <bb-city-card [city]="city.value" class="card-theme"></bb-city-card>
   </div>
 </div>
-
-<bb-city-card></bb-city-card>

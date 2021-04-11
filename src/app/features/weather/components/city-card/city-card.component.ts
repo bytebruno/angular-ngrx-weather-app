@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core'
 
 import { Observable } from 'rxjs'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'bb-city-card',
@@ -13,7 +14,11 @@ export class CityCardComponent implements OnInit {
   city$!: Observable<any>
   math = Math
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  goToDetails() {
+    this.router.navigate([`/weather/detail/${this.city.id}`])
+  }
 }

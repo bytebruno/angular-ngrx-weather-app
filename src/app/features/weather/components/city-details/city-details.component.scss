@@ -1,0 +1,22 @@
+@import '~@angular/material/theming';
+
+.city-detail-card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px;
+
+  .city-detail-card {
+    border-radius: 0 0 8px 8px;
+
+    .hourly-weather-container {
+      display: flex;
+      flex-direction: column;
+
+      hr {
+        margin-top: 0;
+        width: 100%;
+      }
+    }
+  }
+}

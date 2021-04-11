@@ -1,11 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { WeatherComponent } from './weather.component';
+import { RouterModule, Routes } from '@angular/router'
 
-const routes: Routes = [{ path: '', component: WeatherComponent }];
+import { CityDetailsComponent } from './components/city-details/city-details.component'
+import { NgModule } from '@angular/core'
+import { WeatherComponent } from './weather.component'
+
+const routes: Routes = [
+  { path: '', component: WeatherComponent },
+  { path: 'detail', component: CityDetailsComponent },
+  { path: 'detail/:id', component: CityDetailsComponent },
+]
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class WeatherRoutingModule { }
+export class WeatherRoutingModule {}

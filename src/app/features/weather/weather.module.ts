@@ -11,7 +11,8 @@ import { WeatherComponent } from './weather.component'
 import { WeatherEffects } from './state/weather.effects'
 import { WeatherRoutingModule } from './weather-routing.module'
 import { weatherFeatureKey } from './state/weather.selectors'
-import { weatherReducer } from './state/weather.reducers'
+import { weatherReducer } from './state/weather.reducers';
+import { HourlyRowComponent } from './components/city-details/components/hourly-row/hourly-row.component'
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { weatherReducer } from './state/weather.reducers'
     CitiesListComponent,
     CityCardComponent,
     CityDetailsComponent,
+    HourlyRowComponent,
   ],
   imports: [
     // vendor
