@@ -1,5 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router'
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core'
+import { IHourly, IWeather } from '../../model/iweather'
 
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
@@ -15,8 +16,7 @@ import { take } from 'rxjs/operators'
 })
 export class CityDetailsComponent implements OnInit {
   cityId: string = ''
-  city$!: Observable<any>
-  math = Math
+  city$!: Observable<IWeather>
 
   constructor(
     private route: ActivatedRoute,
@@ -38,7 +38,6 @@ export class CityDetailsComponent implements OnInit {
     this.city$ = this.store.select(selectCityCurrentWeather, Number.parseInt(this.cityId))
 
     this.city$.pipe(take(1)).subscribe((city) => {
-      console.log(city)
       if (city === undefined) this.redirectToHome()
       this.store.dispatch(
         getCityCompleteWeatherRequest({
@@ -49,6 +48,8 @@ export class CityDetailsComponent implements OnInit {
       )
     })
   }
+
+  trackHourly = (index: number, hourly: IHourly) => (hourly ? hourly.dt : null)
 
   private redirectToHome = () => this.router.navigate(['/'])
 }

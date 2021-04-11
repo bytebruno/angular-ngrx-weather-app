@@ -4,7 +4,9 @@ import { IWeatherState } from './weather.reducers'
 
 export const weatherFeatureKey = 'weather'
 
-export const selectWeatherFeature = createFeatureSelector<any>(weatherFeatureKey)
+export const selectWeatherFeature = createFeatureSelector<IWeatherState>(
+  weatherFeatureKey
+)
 export const selectCitiesCurrentWeather = createSelector(
   selectWeatherFeature,
   (state: IWeatherState) => state.cities

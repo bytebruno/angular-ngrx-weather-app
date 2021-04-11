@@ -1,23 +1,29 @@
 @import '~@angular/material/theming';
 
-.city-detail-card-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
+.city-detail-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   margin: 40px;
+  justify-items: center;
 
-  .city-detail-card {
-    border-radius: 0 0 8px 8px;
-    margin-bottom: 40px;
+  .city-detail-card-container {
+    .loading-label {
+      text-align: center;
+    }
+    .city-detail-card {
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 40px;
+      max-width: 800px;
 
-    .hourly-weather-container {
-      display: flex;
-      flex-direction: column;
+      .hourly-weather-container {
+        display: flex;
+        flex-direction: column;
 
-      hr {
-        margin-top: 0;
-        width: 100%;
-        opacity: 0.4;
+        hr {
+          margin-top: 0;
+          width: 100%;
+          opacity: 0.4;
+        }
       }
     }
   }

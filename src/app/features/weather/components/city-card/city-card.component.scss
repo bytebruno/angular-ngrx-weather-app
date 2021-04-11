@@ -101,6 +101,8 @@
 
 :host-context(.header-details-theme) {
   .city-card {
+    max-width: 832px;
+
     .city-image-container {
       height: 350px;
       border-radius: 8px 8px 0 0;

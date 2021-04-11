@@ -1,4 +1,4 @@
-export interface ICurrentWeather {
+export interface IWeather {
   cityImageSrc: string
   cityName: string
   coordinates: {
@@ -9,7 +9,15 @@ export interface ICurrentWeather {
   currentDt?: Date
   icon: string
   id: number
-  nextHours?: []
+  nextHours: IHourly[]
   temperature: number
   windSpeed?: string
+}
+
+export interface IHourly {
+  icon: string
+  hour: string
+  temperature: number
+  condition: string
+  dt: number
 }

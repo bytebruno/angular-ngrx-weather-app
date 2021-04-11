@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core'
 
-import { ICurrentWeather } from '../../model/icurrent-weather'
-import { Observable } from 'rxjs'
+import { IWeather } from '../../model/iweather'
 import { Router } from '@angular/router'
 
 @Component({
@@ -11,9 +10,7 @@ import { Router } from '@angular/router'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CityCardComponent implements OnInit {
-  @Input() city!: ICurrentWeather
-  city$!: Observable<any>
-  math = Math
+  @Input() city!: IWeather
 
   constructor(private router: Router) {}
 

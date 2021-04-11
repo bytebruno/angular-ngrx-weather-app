@@ -1,11 +1,11 @@
 import { createReducer, on } from '@ngrx/store'
 
-import { ICurrentWeather } from '../model/icurrent-weather'
-import { getCityCurrentWeatherSuccess } from './weather.actions'
+import { IWeather } from '../model/iweather'
+import { getCityWeatherSuccess } from './weather.actions'
 
 export interface IWeatherState {
   cities: {
-    [key: string]: ICurrentWeather
+    [key: string]: IWeather
   }
 }
 
@@ -23,6 +23,7 @@ const initialWeatherState: IWeatherState = {
         lat: '52.374',
         lon: '4.8897',
       },
+      nextHours: [],
     },
     2925533: {
       id: 2925533,
@@ -35,6 +36,7 @@ const initialWeatherState: IWeatherState = {
         lat: '50.1167',
         lon: '8.6833',
       },
+      nextHours: [],
     },
     2643743: {
       id: 2643743,
@@ -47,6 +49,7 @@ const initialWeatherState: IWeatherState = {
         lat: '51.5085',
         lon: '-0.1257',
       },
+      nextHours: [],
     },
     2988507: {
       id: 2988507,
@@ -59,6 +62,7 @@ const initialWeatherState: IWeatherState = {
         lat: '48.8534',
         lon: '2.3488',
       },
+      nextHours: [],
     },
     3169070: {
       id: 3169070,
@@ -71,20 +75,21 @@ const initialWeatherState: IWeatherState = {
         lat: '41.8947',
         lon: '12.4839',
       },
+      nextHours: [],
     },
   },
 }
 
 export const weatherReducer = createReducer(
   initialWeatherState,
-  on(getCityCurrentWeatherSuccess, (state: IWeatherState, action) => {
+  on(getCityWeatherSuccess, (state: IWeatherState, action) => {
     return {
       ...state,
       cities: {
         ...state.cities,
-        [action.cityCurrentWeather.id]: {
-          ...state.cities[action.cityCurrentWeather.id],
-          ...action.cityCurrentWeather,
+        [action.cityWeather.id]: {
+          ...state.cities[action.cityWeather.id],
+          ...action.cityWeather,
         },
       },
     }

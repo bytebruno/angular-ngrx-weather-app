@@ -1,5 +1,8 @@
 <div class="grid-container" *ngIf="cities$ | async as cities">
-  <div *ngFor="let city of cities | keyvalue">
+  <div
+    class="cards-container"
+    *ngFor="let city of cities | keyvalue; trackBy: trackCities"
+  >
     <bb-city-card [city]="city.value" class="card-theme"></bb-city-card>
   </div>
 </div>
