@@ -111,6 +111,20 @@
         filter: brightness(0.7);
       }
 
+      .mat-card-content {
+        .wind-icon-container {
+          .wind-icon {
+            font-size: 2em;
+          }
+          .wind-label {
+            font-size: 2em;
+          }
+        }
+        .temperature-label {
+          font-size: 3rem;
+        }
+      }
+
       .weather-icon-container {
         position: absolute;
         right: 40px;
@@ -120,6 +134,7 @@
           font-size: 8rem;
         }
       }
+
       .loading-label {
         position: absolute;
         top: 50%;

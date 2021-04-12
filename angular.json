@@ -30,8 +30,8 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/assets/styles/weather-icons.min.css",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/weather-theme.scss"
             ],
             "scripts": []
           },
