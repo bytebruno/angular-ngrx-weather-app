@@ -22,6 +22,6 @@
     <div class="weather-icon-container" [hidden]="!city.currentDt">
       <i class="weather-icon" [ngClass]="city.icon"></i>
     </div>
-    <h2 class="loading-label" [hidden]="city.temperature">Loading...</h2>
+    <h2 class="loading-label" [hidden]="city.currentDt">Loading...</h2>
   </div>
 </mat-card>

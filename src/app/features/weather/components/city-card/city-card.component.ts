@@ -12,7 +12,7 @@ import { Router } from '@angular/router'
 export class CityCardComponent implements OnInit {
   @Input() city!: IWeather
 
-  constructor(private router: Router) {}
+  constructor(public router: Router) {}
 
   ngOnInit(): void {}
 
