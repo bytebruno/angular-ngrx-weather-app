@@ -33,7 +33,8 @@
               "src/styles.scss",
               "src/weather-theme.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": ["moment-timezone"]
           },
           "configurations": {
             "production": {
