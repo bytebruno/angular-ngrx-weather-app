@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { MockStore, provideMockStore } from '@ngrx/store/testing'
-import { citiesMock, initialWeatherState } from '../../utils/tests-mock.util'
+import { citiesMock, initialWeatherState } from '../../utils/mocks/weather-mocks'
 
 import { By } from '@angular/platform-browser'
 import { CitiesListComponent } from './cities-list.component'

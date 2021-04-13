@@ -54,7 +54,7 @@ export const normalizeCompleteWeatherFieds = (
         .format('HH:mm'),
       icon: getWeatherIcon(hourly.weather[0]),
       condition: hourly.weather[0].main,
-      temperature: hourly.temp,
+      temperature: Math.round(hourly.temp),
       dt: hourly.dt,
     }
 

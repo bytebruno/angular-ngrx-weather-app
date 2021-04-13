@@ -19,15 +19,14 @@ export class CityDetailsComponent implements OnInit {
   city$!: Observable<IWeather>
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router,
+    public route: ActivatedRoute,
+    public router: Router,
     private store: Store
   ) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       if (params.get('id') === null) this.redirectToHome()
-
       this.cityId = params.get('id') ?? ''
 
       this.getCityFromStore()
@@ -38,14 +37,17 @@ export class CityDetailsComponent implements OnInit {
     this.city$ = this.store.select(selectCityCurrentWeather, Number.parseInt(this.cityId))
 
     this.city$.pipe(take(1)).subscribe((city) => {
-      if (city === undefined) this.redirectToHome()
-      this.store.dispatch(
-        getCityCompleteWeatherRequest({
-          cityId: Number.parseInt(this.cityId),
-          lat: city.coordinates.lat,
-          lon: city.coordinates.lon,
-        })
-      )
+      if (city === undefined || city === null) {
+        this.redirectToHome()
+      } else {
+        this.store.dispatch(
+          getCityCompleteWeatherRequest({
+            cityId: Number.parseInt(this.cityId),
+            lat: city.coordinates.lat,
+            lon: city.coordinates.lon,
+          })
+        )
+      }
     })
   }
 

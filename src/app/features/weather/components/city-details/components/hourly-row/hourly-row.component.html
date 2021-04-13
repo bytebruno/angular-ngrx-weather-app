@@ -1,4 +1,4 @@
-<div class="hourly-weather-row">
+<div class="hourly-weather-row" *ngIf="hourly">
   <div class="weather-condition-section">
     <div class="weather-icon-container">
       <i class="weather-icon" [ngClass]="hourly.icon"></i>
@@ -8,5 +8,5 @@
       <h3 class="hour-label">{{ hourly.hour }}</h3>
     </div>
   </div>
-  <h1 class="condition-label">{{ math.round(hourly.temperature) }} °C</h1>
+  <h1 class="condition-label">{{ hourly.temperature }} °C</h1>
 </div>

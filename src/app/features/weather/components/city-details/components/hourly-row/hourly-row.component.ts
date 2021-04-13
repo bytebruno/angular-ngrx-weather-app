@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core'
 
+import { IHourly } from 'src/app/features/weather/model/iweather'
+
 @Component({
   selector: 'bb-hourly-row',
   templateUrl: './hourly-row.component.html',
@@ -7,8 +9,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HourlyRowComponent implements OnInit {
-  @Input() hourly!: any
-  math = Math
+  @Input() hourly!: IHourly
 
   constructor() {}
 

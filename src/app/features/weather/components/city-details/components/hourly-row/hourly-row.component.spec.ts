@@ -1,19 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 
+import { By } from '@angular/platform-browser'
+import { DebugElement } from '@angular/core'
 import { HourlyRowComponent } from './hourly-row.component'
-import { IHourly } from 'src/app/features/weather/model/iweather'
-
-const hourlyMock: IHourly = {
-  icon: 'wi wi-rain',
-  hour: Date.UTC(2021, 3, 10, 10, 30, 0).toString(),
-  condition: 'Rain',
-  dt: 123456789,
-  temperature: 6,
-}
+import { hourlyMock } from '../../../../utils/mocks/weather-mocks'
 
 describe('HourlyRowComponent', () => {
   let component: HourlyRowComponent
   let fixture: ComponentFixture<HourlyRowComponent>
+  let el: DebugElement
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -24,11 +19,22 @@ describe('HourlyRowComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(HourlyRowComponent)
     component = fixture.componentInstance
-    component.hourly = hourlyMock
-    fixture.detectChanges()
+    el = fixture.debugElement
   })
 
   it('should create', () => {
     expect(component).toBeTruthy()
+  })
+
+  it("should not show the row if it hasn't a hourly object", () => {
+    const card = el.query(By.css('.hourly-weather-row'))
+    expect(card).toBeNull()
+  })
+
+  it('should show the row if it has a hourly object', () => {
+    component.hourly = hourlyMock
+    fixture.detectChanges()
+    const card = el.query(By.css('.hourly-weather-row'))
+    expect(card).not.toBeNull()
   })
 })
