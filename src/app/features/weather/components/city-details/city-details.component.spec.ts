@@ -34,7 +34,7 @@ describe('CityDetailsComponent', () => {
           useValue: {
             paramMap: of({
               get() {
-                return { id: '2759794' }
+                return null
               },
             }),
           },
@@ -92,7 +92,6 @@ describe('CityDetailsComponent', () => {
   it('should not display the loading label if nextHours array length is greater than 0', () => {
     let cityWithNextHours = { ...cityMock }
     cityWithNextHours.nextHours.push(hourlyMock)
-    console.log(cityWithNextHours.nextHours)
 
     selectCityCurrentWeather.setResult(cityWithNextHours)
     store.refreshState()
@@ -102,5 +101,19 @@ describe('CityDetailsComponent', () => {
       loadingLabel = card.query(By.css('.loading-label'))
 
     expect(loadingLabel.nativeElement.hasAttribute('hidden')).toBeTrue()
+  })
+
+  it('should redirect to home if no id was provided on url', () => {
+    spyOn(component.router, 'navigate')
+    fixture.detectChanges()
+
+    expect(component.router.navigate).toHaveBeenCalledWith(['/'])
+  })
+
+  it('should redirect to home if the city is not found in store', () => {
+    spyOn(component.router, 'navigate')
+    fixture.detectChanges()
+
+    expect(component.router.navigate).toHaveBeenCalledWith(['/'])
   })
 })

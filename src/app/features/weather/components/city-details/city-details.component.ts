@@ -28,7 +28,6 @@ export class CityDetailsComponent implements OnInit {
     this.route.paramMap.subscribe((params) => {
       if (params.get('id') === null) this.redirectToHome()
       this.cityId = params.get('id') ?? ''
-
       this.getCityFromStore()
     })
   }
