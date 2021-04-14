@@ -9,8 +9,11 @@ export const getWeatherIcon = (weatherCondition: any): string => {
     case 'Snow':
       return 'wi wi-snow'
     case 'Clear':
-      if (weatherCondition.icon === '01d') return 'wi wi-day-sunny'
-      else return 'wi wi-night-clear'
+      if (weatherCondition.icon === '01d') {
+        return 'wi wi-day-sunny'
+      } else {
+        return 'wi wi-night-clear'
+      }
     case 'Clouds':
       return 'wi wi-cloudy'
     default:

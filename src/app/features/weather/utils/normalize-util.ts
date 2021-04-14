@@ -10,7 +10,7 @@ import { getWeatherIcon } from './weather-icon-util'
 const UNIX_TIMESTAMP_MULTIPLIER_FACTOR = 1000
 
 export const normalizeCurrentWeatherFieds = (cityWeather: any): IWeather => {
-  let weather: IWeather = { ...cityWeather }
+  const weather: IWeather = { ...cityWeather }
 
   weather.icon = getWeatherIcon(cityWeather.weather[0])
   weather.temperature = Math.round(cityWeather.main.temp)
@@ -24,7 +24,7 @@ export const normalizeCompleteWeatherFieds = (
   cityId: number,
   cityWeather: any
 ): IWeather => {
-  let weather: IWeather = { ...cityWeather }
+  const weather: IWeather = { ...cityWeather }
 
   weather.id = cityId
   weather.nextHours = []
@@ -38,7 +38,7 @@ export const normalizeCompleteWeatherFieds = (
   weather.windSpeed = Math.round(cityWeather.current.wind_speed).toString()
   weather.currentDt = nowWithTimezone.toDate()
 
-  let now: IHourly = {
+  const now: IHourly = {
     hour: nowWithTimezone.format('HH:mm') + ' - Now',
     icon: weather.icon,
     condition: cityWeather.current.weather[0].main,
@@ -48,7 +48,7 @@ export const normalizeCompleteWeatherFieds = (
   weather.nextHours.push(now)
 
   cityWeather.hourly.splice(1, 6).map((hourly: IOpenWeatherHourlyHourly) => {
-    let normalizedHourly: IHourly = {
+    const normalizedHourly: IHourly = {
       hour: moment(hourly.dt * UNIX_TIMESTAMP_MULTIPLIER_FACTOR)
         .tz(cityWeather.timezone)
         .format('HH:mm'),

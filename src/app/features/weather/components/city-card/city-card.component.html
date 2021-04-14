@@ -1,19 +1,15 @@
 <mat-card class="city-card" *ngIf="city" (click)="goToDetails()">
   <div class="city-image-container">
-    <img
-      mat-card-image
-      class="city-image"
-      [src]="'assets/images/' + city.cityImageSrc"
-      alt="Photo of Amsterdam city"
-    />
+    <img mat-card-image class="city-image" [src]="'assets/images/' + city.cityImageSrc"
+      alt="Photo of Amsterdam city" />
     <mat-card-content>
       <div>
         <h1 class="city-label">{{ city.cityName }}</h1>
         <h4 class="country-label">{{ city.country }}</h4>
       </div>
       <div class="wind-icon-container" [hidden]="!city.windSpeed">
-        <i class="wi wi-strong-wind wind-icon"></i
-        ><span class="wind-label"> {{ city.windSpeed }} m/s</span>
+        <i class="wi wi-strong-wind wind-icon"></i><span class="wind-label">
+          {{ city.windSpeed }} m/s</span>
       </div>
       <h2 class="temperature-label" [hidden]="!city.currentDt">
         {{ city.temperature }} °C

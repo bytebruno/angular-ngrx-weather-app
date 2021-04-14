@@ -57,7 +57,7 @@ describe('CitiesListComponent', () => {
   it('should display the first city ordered by name correctly', () => {
     selectCitiesCurrentWeather.setResult(citiesMock)
 
-    let city = citiesMock['2759794'] // Amsterdam
+    const city = citiesMock['2759794'] // Amsterdam
 
     store.refreshState()
     fixture.detectChanges()
@@ -72,7 +72,7 @@ describe('CitiesListComponent', () => {
   it('should not display London (smaller id) as the first city', () => {
     selectCitiesCurrentWeather.setResult(citiesMock)
 
-    let city = Object.values(citiesMock)[0] // London
+    const city = Object.values(citiesMock)[0] // London
 
     store.refreshState()
     fixture.detectChanges()

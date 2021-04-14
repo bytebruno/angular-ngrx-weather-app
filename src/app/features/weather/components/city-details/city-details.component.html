@@ -7,8 +7,7 @@
       <mat-card-content>
         <div class="hourly-weather-container">
           <ng-container
-            *ngFor="let hourly of city.nextHours; trackBy: trackHourly; let isLast = last"
-          >
+            *ngFor="let hourly of city.nextHours; trackBy: trackHourly; let isLast = last">
             <bb-hourly-row [hourly]="hourly"></bb-hourly-row>
             <hr [hidden]="isLast" />
           </ng-container>

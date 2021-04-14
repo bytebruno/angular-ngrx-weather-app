@@ -6,7 +6,6 @@ import { WeatherComponent } from './weather.component'
 
 const routes: Routes = [
   { path: '', component: WeatherComponent },
-  { path: 'detail', component: CityDetailsComponent },
   { path: 'detail/:id', component: CityDetailsComponent },
 ]
 

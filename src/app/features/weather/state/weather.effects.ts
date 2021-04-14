@@ -24,7 +24,7 @@ export class WeatherEffects {
       ofType(getAllCitiesCurrentWeatherRequest),
       withLatestFrom(this.store$),
       switchMap(([action, store]) => {
-        let citiesIds = Object.keys(store.weather.cities)
+        const citiesIds = Object.keys(store.weather.cities)
         return merge(
           ...citiesIds.map((cityId) =>
             this.openWeatherService.getCityCurrentWeather(cityId).pipe(

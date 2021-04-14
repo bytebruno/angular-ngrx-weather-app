@@ -15,7 +15,7 @@ import { take } from 'rxjs/operators'
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CityDetailsComponent implements OnInit {
-  cityId: string = ''
+  cityId = ''
   city$!: Observable<IWeather>
 
   constructor(
@@ -26,7 +26,9 @@ export class CityDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
-      if (params.get('id') === null) this.redirectToHome()
+      if (params.get('id') === null) {
+        this.redirectToHome()
+      }
       this.cityId = params.get('id') ?? ''
       this.getCityFromStore()
     })

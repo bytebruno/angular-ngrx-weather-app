@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 
 import { CitiesListComponent } from './components/cities-list/cities-list.component'
 import { IWeatherState } from './state/weather.reducers'
-import { RouterTestingModule } from '@angular/router/testing'
 import { WeatherComponent } from './weather.component'
 import { initialWeatherState } from './utils/mocks/weather-mocks'
 import { provideMockStore } from '@ngrx/store/testing'

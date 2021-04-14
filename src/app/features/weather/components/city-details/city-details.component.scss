@@ -6,6 +6,10 @@
   margin: 40px;
   justify-items: center;
 
+  @media (max-width: 576px) {
+    margin: 14px;
+  }
+
   .city-detail-card-container {
     .city-detail-card {
       border-radius: 0 0 8px 8px;

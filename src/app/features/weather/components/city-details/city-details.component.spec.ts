@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router, convertToParamMap } from '@angular/router'
+import { ActivatedRoute } from '@angular/router'
 import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { MockStore, provideMockStore } from '@ngrx/store/testing'
 import {
@@ -76,7 +76,7 @@ describe('CityDetailsComponent', () => {
   })
 
   it('should display the loading label if nextHours array length is 0', () => {
-    let cityWithoutNextHours = { ...cityMock }
+    const cityWithoutNextHours = { ...cityMock }
     cityWithoutNextHours.nextHours = []
     selectCityCurrentWeather.setResult(cityWithoutNextHours)
 
@@ -90,7 +90,7 @@ describe('CityDetailsComponent', () => {
   })
 
   it('should not display the loading label if nextHours array length is greater than 0', () => {
-    let cityWithNextHours = { ...cityMock }
+    const cityWithNextHours = { ...cityMock }
     cityWithNextHours.nextHours.push(hourlyMock)
 
     selectCityCurrentWeather.setResult(cityWithNextHours)

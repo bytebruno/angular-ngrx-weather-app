@@ -18,15 +18,29 @@
         font-size: 3rem;
       }
     }
+  }
 
-    .weather-condition {
-      .condition-label {
-        margin: 0;
-        font-size: 1.8em;
-      }
-      .hour-label {
-        margin: 0;
-        font-weight: 400;
+  .label {
+    margin: 0;
+
+    &.condition,
+    &.temperature {
+      font-size: 1.8em;
+    }
+
+    &.temperature {
+      margin-right: 10px !important;
+    }
+
+    &.hour {
+      font-weight: 400;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .weather-condition-section {
+      .weather-icon-container {
+        min-width: 70px;
       }
     }
   }
