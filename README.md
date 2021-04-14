@@ -1,27 +1,35 @@
-# AngularNgrxWeatherApp
+# Angular with NGRX - Weather Forecast
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
+Weather forecast example using Angular 11, NGRX and OpenWeather API.
 
-## Development server
+## Project Setup
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Start the app
 
-## Code scaffolding
+- Clone the Project - `https://github.com/bytebruno/angular-ngrx-weather-app.git`
+- Install the dependencies - `npm install`
+- Start the web app - `npm start`
+- The application will be running on `http://localhost:5000`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Run tests
 
-## Build
+- Run unit tests - `ng test`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Technologies
 
-## Running unit tests
+- Angular 11
+- NgRx
+- Angular Material
+- OpenWeather API
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### For more details, please see [README-DEV](https://github.com/bytebruno/angular-ngrx-weather-app/blob/master/README-DEV.md)
 
-## Running end-to-end tests
+## Screenshots
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Cities list
 
-## Further help
+![Cities list](docs/screenshots/s1.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### City detail
+
+![City detail](docs/screenshots/s2.png)
