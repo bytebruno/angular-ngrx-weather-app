@@ -9,7 +9,7 @@ Weather forecast example using Angular 11, NGRX and OpenWeather API.
 - Clone the Project - `https://github.com/bytebruno/angular-ngrx-weather-app.git`
 - Install the dependencies - `npm install`
 - Start the web app - `npm start`
-- The application will be running on `http://localhost:5000`
+- The application will be running on `http://localhost:4200`
 
 #### Run tests
 
