@@ -2,7 +2,7 @@
 
 ## Archictecture
 
-Project created with Angular 11 version, added NGRX for the application state management and Angular Material to use some material components.
+Project created with Angular 11 version (migrated to 16), added NGRX for the application state management and Angular Material to use some material components.
 
 #### Main modules:
 

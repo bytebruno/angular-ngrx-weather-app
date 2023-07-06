@@ -1,6 +1,6 @@
 # Angular with NGRX - Weather Forecast
 
-Weather forecast example using Angular 11, NGRX and OpenWeather API.
+Weather forecast example using Angular 16, NGRX, Angular Material and OpenWeather API.
 
 ## Project Setup
 
@@ -17,10 +17,10 @@ Weather forecast example using Angular 11, NGRX and OpenWeather API.
 
 ## Technologies
 
-- Angular 11
-- NgRx
-- Angular Material
-- OpenWeather API
+- [Angular 16](https://angular.io/)
+- [NgRx](https://ngrx.io/)
+- [Angular Material](https://material.angular.io/)
+- [OpenWeather API](https://openweathermap.org/api)
 
 ##### For more details, please see [README-DEV](https://github.com/bytebruno/angular-ngrx-weather-app/blob/master/README-DEV.md)
 
