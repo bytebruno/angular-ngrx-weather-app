@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { RouterModule } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 
-const routes = [
+const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
