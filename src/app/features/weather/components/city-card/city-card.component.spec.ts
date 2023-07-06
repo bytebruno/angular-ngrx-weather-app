@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing'
 import { By } from '@angular/platform-browser'
 import { CityCardComponent } from './city-card.component'
 import { DebugElement } from '@angular/core'
-import { MatCardModule } from '@angular/material/card'
+import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card'
 import { RouterTestingModule } from '@angular/router/testing'
 import { cityMock } from '../../utils/mocks/weather-mocks'
 
